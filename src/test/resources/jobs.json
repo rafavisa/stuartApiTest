@@ -1,0 +1,1343 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "mandatory": {
+      "type": "boolean"
+    },
+    "startInvitingAt": {
+      "type": "string"
+    },
+    "expirationInterval": {
+      "type": "integer"
+    },
+    "expiresAt": {
+      "type": "string"
+    },
+    "clientDesiredArrivalTime": {
+      "type": "null"
+    },
+    "lastInvitationSentAt": {
+      "type": "null"
+    },
+    "invitationsCount": {
+      "type": "integer"
+    },
+    "comment": {
+      "type": "null"
+    },
+    "originComment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "destinationComment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "clientReference": {
+      "type": "null"
+    },
+    "lastStatus": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "jobStatusType": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "code": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "code",
+            "name"
+          ]
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "jobStatusType",
+        "status"
+      ]
+    },
+    "order": {
+      "type": "null"
+    },
+    "paymentMethod": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "code"
+      ]
+    },
+    "renewable": {
+      "type": "integer"
+    },
+    "jobType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "pricingMethod": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "id",
+        "code",
+        "name",
+        "pricingMethod"
+      ]
+    },
+    "currentDelivery": {
+      "type": "null"
+    },
+    "jobCancellation": {
+      "type": "null"
+    },
+    "client": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "ratingAvg": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "clientAccount": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "jobTimeExpiration": {
+              "type": "null"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "jobTimeExpiration",
+            "type"
+          ]
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "picturePath": {
+          "type": "null"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "lastnameInitial": {
+          "type": "string"
+        },
+        "referrals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "createdAt": {
+                "type": "string"
+              },
+              "referralCode": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "createdAt": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "null"
+                  },
+                  "code": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "null"
+                  },
+                  "currency": {
+                    "type": "null"
+                  },
+                  "seed": {
+                    "type": "null"
+                  },
+                  "target": {
+                    "type": "integer"
+                  },
+                  "amount": {
+                    "type": "number"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "expiresAt": {
+                    "type": "null"
+                  }
+                },
+                "required": [
+                  "id",
+                  "createdAt",
+                  "name",
+                  "code",
+                  "city",
+                  "currency",
+                  "seed",
+                  "target",
+                  "amount",
+                  "enabled",
+                  "expiresAt"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "createdAt",
+              "referralCode"
+            ]
+          }
+        },
+        "referral": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "referralCode": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "null"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "null"
+                },
+                "currency": {
+                  "type": "null"
+                },
+                "seed": {
+                  "type": "null"
+                },
+                "target": {
+                  "type": "integer"
+                },
+                "amount": {
+                  "type": "number"
+                },
+                "enabled": {
+                  "type": "boolean"
+                },
+                "expiresAt": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "id",
+                "createdAt",
+                "name",
+                "code",
+                "city",
+                "currency",
+                "seed",
+                "target",
+                "amount",
+                "enabled",
+                "expiresAt"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "referralCode"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "email",
+        "ratingAvg",
+        "clientAccount",
+        "firstname",
+        "phone",
+        "picturePath",
+        "lastname",
+        "lastnameInitial",
+        "referrals",
+        "referral"
+      ]
+    },
+    "originPlace": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "name": {
+          "type": "null"
+        },
+        "contactName": {
+          "type": "null"
+        },
+        "contactPhone": {
+          "type": "null"
+        },
+        "contactEmail": {
+          "type": "null"
+        },
+        "comment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "street": {
+              "type": "string"
+            },
+            "postcode": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "latitude": {
+              "type": "number"
+            },
+            "longitude": {
+              "type": "number"
+            },
+            "city": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "timezone": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "number"
+                },
+                "longitude": {
+                  "type": "number"
+                },
+                "region": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "iso2Code": {
+                          "type": "string"
+                        },
+                        "defaultCurrency": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "isoCode": {
+                              "type": "string"
+                            },
+                            "symbol": {
+                              "type": "string"
+                            },
+                            "rate": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "isoCode",
+                            "symbol",
+                            "rate"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "iso2Code",
+                        "defaultCurrency"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "country"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "code",
+                "timezone",
+                "latitude",
+                "longitude",
+                "region"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "street",
+            "postcode",
+            "latitude",
+            "longitude",
+            "city"
+          ]
+        },
+        "placeType": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "code"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "updatedAt",
+        "name",
+        "contactName",
+        "contactPhone",
+        "contactEmail",
+        "comment",
+        "address",
+        "placeType"
+      ]
+    },
+    "destinationPlace": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "name": {
+          "type": "null"
+        },
+        "contactName": {
+          "type": "null"
+        },
+        "contactPhone": {
+          "type": "null"
+        },
+        "contactEmail": {
+          "type": "null"
+        },
+        "comment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "street": {
+              "type": "string"
+            },
+            "postcode": {
+              "type": "string"
+            },
+            "latitude": {
+              "type": "number"
+            },
+            "longitude": {
+              "type": "number"
+            },
+            "city": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "timezone": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "number"
+                },
+                "longitude": {
+                  "type": "number"
+                },
+                "region": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "iso2Code": {
+                          "type": "string"
+                        },
+                        "defaultCurrency": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "isoCode": {
+                              "type": "string"
+                            },
+                            "symbol": {
+                              "type": "string"
+                            },
+                            "rate": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "isoCode",
+                            "symbol",
+                            "rate"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "iso2Code",
+                        "defaultCurrency"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "country"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "code",
+                "timezone",
+                "latitude",
+                "longitude",
+                "region"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "updatedAt",
+            "street",
+            "postcode",
+            "latitude",
+            "longitude",
+            "city"
+          ]
+        },
+        "placeType": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "code"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "updatedAt",
+        "name",
+        "contactName",
+        "contactPhone",
+        "contactEmail",
+        "comment",
+        "address",
+        "placeType"
+      ]
+    },
+    "finalJobPrice": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "originalTotalAmount": {
+          "type": "number"
+        },
+        "finalTotalAmount": {
+          "type": "number"
+        },
+        "cancellationPrice": {
+          "type": "number"
+        },
+        "minPrice": {
+          "type": "number"
+        },
+        "basePrice": {
+          "type": "number"
+        },
+        "jobQuote": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "distance": {
+              "type": "number"
+            },
+            "duration": {
+              "type": "integer"
+            },
+            "durationWithTraffic": {
+              "type": "integer"
+            },
+            "polyline": {
+              "type": "string"
+            },
+            "originPlace": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "null"
+                },
+                "contactName": {
+                  "type": "null"
+                },
+                "contactPhone": {
+                  "type": "null"
+                },
+                "contactEmail": {
+                  "type": "null"
+                },
+                "comment": {
+                  "type": "null"
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "street": {
+                      "type": "string"
+                    },
+                    "postcode": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "latitude": {
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "type": "number"
+                    },
+                    "city": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "code": {
+                          "type": "string"
+                        },
+                        "timezone": {
+                          "type": "string"
+                        },
+                        "latitude": {
+                          "type": "number"
+                        },
+                        "longitude": {
+                          "type": "number"
+                        },
+                        "region": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "country": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "iso2Code": {
+                                  "type": "string"
+                                },
+                                "defaultCurrency": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "isoCode": {
+                                      "type": "string"
+                                    },
+                                    "symbol": {
+                                      "type": "string"
+                                    },
+                                    "rate": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "isoCode",
+                                    "symbol",
+                                    "rate"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "name",
+                                "iso2Code",
+                                "defaultCurrency"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "country"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "code",
+                        "timezone",
+                        "latitude",
+                        "longitude",
+                        "region"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "createdAt",
+                    "updatedAt",
+                    "street",
+                    "postcode",
+                    "latitude",
+                    "longitude",
+                    "city"
+                  ]
+                },
+                "placeType": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "code"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "createdAt",
+                "updatedAt",
+                "name",
+                "contactName",
+                "contactPhone",
+                "contactEmail",
+                "comment",
+                "address",
+                "placeType"
+              ]
+            },
+            "destinationPlace": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "null"
+                },
+                "contactName": {
+                  "type": "null"
+                },
+                "contactPhone": {
+                  "type": "null"
+                },
+                "contactEmail": {
+                  "type": "null"
+                },
+                "comment": {
+                  "type": "null"
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "street": {
+                      "type": "string"
+                    },
+                    "postcode": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "type": "number"
+                    },
+                    "city": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "code": {
+                          "type": "string"
+                        },
+                        "timezone": {
+                          "type": "string"
+                        },
+                        "latitude": {
+                          "type": "number"
+                        },
+                        "longitude": {
+                          "type": "number"
+                        },
+                        "region": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "country": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "iso2Code": {
+                                  "type": "string"
+                                },
+                                "defaultCurrency": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "isoCode": {
+                                      "type": "string"
+                                    },
+                                    "symbol": {
+                                      "type": "string"
+                                    },
+                                    "rate": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "isoCode",
+                                    "symbol",
+                                    "rate"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "name",
+                                "iso2Code",
+                                "defaultCurrency"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "country"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "code",
+                        "timezone",
+                        "latitude",
+                        "longitude",
+                        "region"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "createdAt",
+                    "updatedAt",
+                    "street",
+                    "postcode",
+                    "latitude",
+                    "longitude",
+                    "city"
+                  ]
+                },
+                "placeType": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "code"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "createdAt",
+                "updatedAt",
+                "name",
+                "contactName",
+                "contactPhone",
+                "contactEmail",
+                "comment",
+                "address",
+                "placeType"
+              ]
+            },
+            "currency": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "isoCode": {
+                  "type": "string"
+                },
+                "symbol": {
+                  "type": "string"
+                },
+                "rate": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "isoCode",
+                "symbol",
+                "rate"
+              ]
+            },
+            "originalTotalAmount": {
+              "type": "number"
+            },
+            "finalTotalAmount": {
+              "type": "number"
+            },
+            "cancellationPrice": {
+              "type": "number"
+            },
+            "minPrice": {
+              "type": "number"
+            },
+            "basePrice": {
+              "type": "number"
+            },
+            "expireAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "createdAt",
+            "distance",
+            "duration",
+            "durationWithTraffic",
+            "polyline",
+            "originPlace",
+            "destinationPlace",
+            "currency",
+            "originalTotalAmount",
+            "finalTotalAmount",
+            "cancellationPrice",
+            "minPrice",
+            "basePrice",
+            "expireAt"
+          ]
+        },
+        "currency": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "isoCode": {
+              "type": "string"
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "rate": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "isoCode",
+            "symbol",
+            "rate"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "originalTotalAmount",
+        "finalTotalAmount",
+        "cancellationPrice",
+        "minPrice",
+        "basePrice",
+        "jobQuote",
+        "currency"
+      ]
+    },
+    "transportType": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "defaultMaxPackageWidthCm": {
+          "type": "number"
+        },
+        "defaultMaxPackageHeightCm": {
+          "type": "number"
+        },
+        "defaultMaxPackageLengthCm": {
+          "type": "number"
+        },
+        "defaultGeolocateMeters": {
+          "type": "integer"
+        },
+        "defaultMaxPackageWeightKg": {
+          "type": "number"
+        },
+        "speedRatio": {
+          "type": "number"
+        },
+        "speed": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "code",
+        "defaultMaxPackageWidthCm",
+        "defaultMaxPackageHeightCm",
+        "defaultMaxPackageLengthCm",
+        "defaultGeolocateMeters",
+        "defaultMaxPackageWeightKg",
+        "speedRatio",
+        "speed"
+      ]
+    },
+    "packageType": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "picturePath": {
+      "type": "null"
+    },
+    "clientRating": {
+      "type": "null"
+    },
+    "platformTransactions": {
+      "type": "array",
+      "items": {}
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "updatedAt",
+    "mandatory",
+    "startInvitingAt",
+    "expirationInterval",
+    "expiresAt",
+    "clientDesiredArrivalTime",
+    "lastInvitationSentAt",
+    "invitationsCount",
+    "comment",
+    "clientReference",
+    "lastStatus",
+    "order",
+    "paymentMethod",
+    "renewable",
+    "jobType",
+    "currentDelivery",
+    "jobCancellation",
+    "client",
+    "originPlace",
+    "destinationPlace",
+    "finalJobPrice",
+    "picturePath",
+    "clientRating",
+    "platformTransactions",
+    "status"
+  ]
+}

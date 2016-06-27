@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "name": {
+      "type": "null"
+    },
+    "contactName": {
+      "type": "null"
+    },
+    "contactPhone": {
+      "type": "null"
+    },
+    "contactEmail": {
+      "type": "null"
+    },
+    "comment": {
+      "type": "null"
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "city": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            },
+            "timezone": {
+              "type": "string"
+            },
+            "latitude": {
+              "type": "number"
+            },
+            "longitude": {
+              "type": "number"
+            },
+            "region": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "iso2Code": {
+                      "type": "string"
+                    },
+                    "defaultCurrency": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "isoCode": {
+                          "type": "string"
+                        },
+                        "symbol": {
+                          "type": "string"
+                        },
+                        "rate": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "isoCode",
+                        "symbol",
+                        "rate"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "iso2Code",
+                    "defaultCurrency"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "country"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "code",
+            "timezone",
+            "latitude",
+            "longitude",
+            "region"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "updatedAt",
+        "street",
+        "postcode",
+        "latitude",
+        "longitude",
+        "city"
+      ]
+    },
+    "placeType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "code"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "createdAt",
+    "updatedAt",
+    "name",
+    "contactName",
+    "contactPhone",
+    "contactEmail",
+    "comment",
+    "address",
+    "placeType"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "lastnameInitial": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string"
+    },
+    "refreshToken": {
+      "type": "string"
+    },
+    "picturePath": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "ratingAvg": {
+      "type": "number"
+    },
+    "clientAccount": {
+      "type": "object",
+      "properties": {
+        "creditCards": {
+          "type": "array",
+          "items": {}
+        },
+        "jobTimeExpiration": {
+          "type": "null"
+        },
+        "wallets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "wallet": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      "required": [
+        "creditCards",
+        "jobTimeExpiration",
+        "wallets",
+        "wallet"
+      ]
+    },
+    "encryptedPassword": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "firstname",
+    "lastname",
+    "lastnameInitial",
+    "phone",
+    "token",
+    "refreshToken",
+    "picturePath",
+    "email",
+    "ratingAvg",
+    "clientAccount",
+    "encryptedPassword"
+  ]
+}
