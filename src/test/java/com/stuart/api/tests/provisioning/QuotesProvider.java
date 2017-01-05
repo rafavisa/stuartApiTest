@@ -22,7 +22,7 @@ public class QuotesProvider extends Provider {
                         ApiConst.TRANSPORT_TYPE_IDS_PARAM, "1,2,3,4,5",
                         ApiConst.ORIGIN_PLACE_ID_PARAM, orig.getId(),
                         ApiConst.DESTINATION_PLACE_ID_PARAM, dest.getId(),
-                        ApiConst.CLIENT_ID_PARAM, testEnv.getClientId()).
+                        ApiConst.CLIENT_ID_PARAM, testEnv.getClientApiId()).
                 when().post("/v1/jobs/quotes/types");
         quotes.put(1, response.getBody().jsonPath().getString("1.id"));
         quotes.put(2, response.getBody().jsonPath().getString("2.id"));

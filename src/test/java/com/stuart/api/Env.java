@@ -5,27 +5,30 @@ import java.util.Map;
 
 public class Env {
 
-    public static final String API_URI_KEY = "apiUri";
-    public static final String USERNAME_KEY = "username";
-    public static final String PASSWORD_KEY = "password";
-    public static final String CLIENT_ID_KEY = "clientId";
-    public static final String CLIENT_SECRET_KEY = "clientSecret";
-    public static final String API_URI_SANDBOX = "http://sandbox-api.stuart.com";
-    public static final String USERNAME_SANDBOX = "r.visa@stuart.com";
-    public static final String PASSWORD_SANDBOX = "test1234";
-    public static final String CLIENT_ID_SANDBOX =
+    private static final String API_URI_KEY = "apiUri";
+    private static final String USERNAME_KEY = "username";
+    private static final String PASSWORD_KEY = "password";
+    private static final String CLIENT_ID_KEY = "clientId";
+    private static final String CLIENT_API_ID_KEY = "clientApiId";
+    private static final String CLIENT_API_SECRET_KEY = "clientSecret";
+    private static final String API_URI_SANDBOX = "http://sandbox-api.stuart.com";
+    private static final String USERNAME_SANDBOX = "r.visa@stuart.com";
+    private static final String PASSWORD_SANDBOX = "test1234";
+    private static final int CLIENT_ID_SANDBOX = 2642;
+    private static final String CLIENT_API_ID_SANDBOX =
             "81_87aa5725abf59ee5b8fbbf84540786c8a5eff6c89475dbd2f7";
-    public static final String CLIENT_SECRET_SANDBOX =
+    private static final String CLIENT_API_SECRET_SANDBOX =
             "5667150462818adad05dbbc0b41fe512fd1e4b692d1111dffe";
-    public static final String API_URI_BETA = "http://beta-api.stuart.com";
-    public static final String USERNAME_BETA = "r.visa@stuart.com";
-    public static final String PASSWORD_BETA = "test1234";
-    public static final String CLIENT_ID_BETA =
+    private static final String API_URI_BETA = "http://beta-api.stuart.com";
+    private static final String USERNAME_BETA = "r.visa@stuart.com";
+    private static final String PASSWORD_BETA = "test1234";
+    private static final int CLIENT_ID_BETA = 2889;
+    private static final String CLIENT_API_ID_BETA =
             "25_f683b7fab4e6d46ea2bd10740e3ffcc4160a5e288f10cb3453";
-    public static final String CLIENT_SECRET_BETA =
+    private static final String CLIENT_API_SECRET_BETA =
             "52a85a8aba752eb0a82ad03a969b373b3a6dc5a86b9bf64054";
 
-    Map<String, String> env = new HashMap<>();
+    private Map<String, String> env = new HashMap<>();
 
     public Env() {
         // Run with -Denvironment=beta
@@ -37,15 +40,17 @@ public class Env {
                 env.put(API_URI_KEY, API_URI_SANDBOX);
                 env.put(USERNAME_KEY, USERNAME_SANDBOX);
                 env.put(PASSWORD_KEY, PASSWORD_SANDBOX);
-                env.put(CLIENT_ID_KEY, CLIENT_ID_SANDBOX);
-                env.put(CLIENT_SECRET_KEY, CLIENT_SECRET_SANDBOX);
+                env.put(CLIENT_ID_KEY, String.valueOf(CLIENT_ID_SANDBOX));
+                env.put(CLIENT_API_ID_KEY, CLIENT_API_ID_SANDBOX);
+                env.put(CLIENT_API_SECRET_KEY, CLIENT_API_SECRET_SANDBOX);
                 break;
             case "beta":
                 env.put(API_URI_KEY, API_URI_BETA);
                 env.put(USERNAME_KEY, USERNAME_BETA);
                 env.put(PASSWORD_KEY, PASSWORD_BETA);
-                env.put(CLIENT_ID_KEY, CLIENT_ID_BETA);
-                env.put(CLIENT_SECRET_KEY, CLIENT_SECRET_BETA);
+                env.put(CLIENT_ID_KEY, String.valueOf(CLIENT_ID_BETA));
+                env.put(CLIENT_API_ID_KEY, CLIENT_API_ID_BETA);
+                env.put(CLIENT_API_SECRET_KEY, CLIENT_API_SECRET_BETA);
                 break;
         }
     }
@@ -66,7 +71,11 @@ public class Env {
         return env.get(CLIENT_ID_KEY);
     }
 
-    public String getClientSecret() {
-        return env.get(CLIENT_SECRET_KEY);
+    public String getClientApiId() {
+        return env.get(CLIENT_API_ID_KEY);
+    }
+
+    public String getClientApiSecret() {
+        return env.get(CLIENT_API_SECRET_KEY);
     }
 }

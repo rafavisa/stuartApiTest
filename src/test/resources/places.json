@@ -3,7 +3,7 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "integer"
+      "type": "number"
     },
     "createdAt": {
       "type": "string"
@@ -12,25 +12,40 @@
       "type": "string"
     },
     "name": {
-      "type": "null"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "contactName": {
-      "type": "null"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "contactPhone": {
-      "type": "null"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "contactEmail": {
-      "type": "null"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "comment": {
-      "type": "null"
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "address": {
       "type": "object",
       "properties": {
         "id": {
-          "type": "integer"
+          "type": "number"
         },
         "createdAt": {
           "type": "string"
@@ -54,7 +69,7 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "integer"
+              "type": "number"
             },
             "name": {
               "type": "string"
@@ -81,7 +96,7 @@
                   "type": "object",
                   "properties": {
                     "id": {
-                      "type": "integer"
+                      "type": "number"
                     },
                     "name": {
                       "type": "string"
@@ -102,58 +117,26 @@
                           "type": "string"
                         },
                         "rate": {
-                          "type": "integer"
+                          "type": "number"
                         }
-                      },
-                      "required": [
-                        "name",
-                        "isoCode",
-                        "symbol",
-                        "rate"
-                      ]
+                      }
                     }
-                  },
-                  "required": [
-                    "id",
-                    "name",
-                    "iso2Code",
-                    "defaultCurrency"
-                  ]
+                  }
                 }
-              },
-              "required": [
-                "name",
-                "country"
-              ]
+              }
             }
-          },
-          "required": [
-            "id",
-            "name",
-            "code",
-            "timezone",
-            "latitude",
-            "longitude",
-            "region"
-          ]
+          }
+        },
+        "accuracy": {
+          "type": "number"
         }
-      },
-      "required": [
-        "id",
-        "createdAt",
-        "updatedAt",
-        "street",
-        "postcode",
-        "latitude",
-        "longitude",
-        "city"
-      ]
+      }
     },
     "placeType": {
       "type": "object",
       "properties": {
         "id": {
-          "type": "integer"
+          "type": "number"
         },
         "name": {
           "type": "string"
@@ -161,24 +144,7 @@
         "code": {
           "type": "string"
         }
-      },
-      "required": [
-        "id",
-        "name",
-        "code"
-      ]
+      }
     }
-  },
-  "required": [
-    "id",
-    "createdAt",
-    "updatedAt",
-    "name",
-    "contactName",
-    "contactPhone",
-    "contactEmail",
-    "comment",
-    "address",
-    "placeType"
-  ]
+  }
 }

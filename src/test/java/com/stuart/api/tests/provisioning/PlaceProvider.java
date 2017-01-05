@@ -19,7 +19,7 @@ public class PlaceProvider extends Provider {
                 formParams(
                         ApiConst.ADDRESS_LATITUDE_PARAM, lat,
                         ApiConst.ADDRESS_LONGITUDE_PARAM, lon,
-                        ApiConst.CLIENT_ID_PARAM, testEnv.getClientId(),
+                        ApiConst.CLIENT_ID_PARAM, testEnv.getClientApiId(),
                         ApiConst.PLACE_TYPE_ID_PARAM, "2").
                 when().post("/v1/places");
         id = response.getBody().jsonPath().getString("id");

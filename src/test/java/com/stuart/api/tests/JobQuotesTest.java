@@ -9,9 +9,9 @@ import io.restassured.filter.log.LogDetail;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.Matchers.contains;
 
-public class QuotesTest extends ApiTest {
+public class JobQuotesTest extends ApiTest {
 
     @Test
     public void createQuotesFromPlaceId() {
@@ -67,8 +67,8 @@ public class QuotesTest extends ApiTest {
                 expect().statusCode(422).
                 when().post("/v1/jobs/quotes/types").then().
                 log().ifValidationFails(LogDetail.ALL).
-                body("errors.code", hasItems(422022),
-                        "errors.message", hasItems("Same origin and destination addresses"),
-                        "errors.key", hasItems("SAME_ORIGIN_AND_DESTINATION"));
+                body("errors.code", contains(422022),
+                        "errors.message", contains("Same origin and destination addresses"),
+                        "errors.key", contains("SAME_ORIGIN_AND_DESTINATION"));
     }
 }

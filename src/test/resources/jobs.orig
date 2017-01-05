@@ -158,8 +158,7 @@
         "ratingAvg": {
           "type": [
             "string",
-            "null",
-            "number"
+            "null"
           ]
         },
         "clientAccount": {
@@ -186,10 +185,7 @@
           }
         },
         "companyName": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         },
         "firstname": {
           "type": "string"
@@ -286,22 +282,13 @@
               "type": "string"
             },
             "address": {
-              "type": [
-                "string",
-                "null"
-              ]
+              "type": "string"
             },
             "city": {
-              "type": [
-                "string",
-                "null"
-              ]
+              "type": "string"
             },
             "zipcode": {
-              "type": [
-                "string",
-                "null"
-              ]
+              "type": "string"
             },
             "country": {
               "type": [
@@ -615,10 +602,7 @@
       }
     },
     "finalJobPrice": {
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "id": {
           "type": "number"
@@ -1020,10 +1004,7 @@
       }
     },
     "transportType": {
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "id": {
           "type": "number"
@@ -1060,8 +1041,7 @@
     "packageType": {
       "type": [
         "string",
-        "null",
-        "object"
+        "null"
       ]
     },
     "picturePath": {

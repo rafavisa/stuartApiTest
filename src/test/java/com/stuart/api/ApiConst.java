@@ -15,7 +15,8 @@ public class ApiConst {
     public static final String USERNAME_PARAM = "username";
     public static final String PASSWORD_PARAM = "password";
     public static final String GRANT_TYPE_PARAM = "grant_type";
-    public static final String GRANT_TYPE = "password";
+    public static final String GRANT_TYPE_PASS = "password";
+    public static final String GRANT_TYPE_CREDENTIALS = "client_credentials";
     public static final String AUTHORIZATION_HEADER = "Authorization";
     public static final String BEARER = "Bearer ";
     public static final String ADDRESS_LATITUDE_PARAM = "addressLatitude";

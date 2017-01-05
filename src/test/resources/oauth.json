@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "access_token": {
+      "type": "string"
+    },
+    "token_type": {
+      "type": "string"
+    },
+    "expires_in": {
+      "type": "number"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "number"
+    }
+  }
+}

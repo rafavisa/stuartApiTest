@@ -2,15 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "id": {
-      "type": "number"
-    },
-    "createdAt": {
-      "type": "string"
-    },
-    "updatedAt": {
-      "type": "string"
-    },
     "mandatory": {
       "type": "boolean"
     },
@@ -50,7 +41,7 @@
         "null"
       ]
     },
-    "DestinationComment": {
+    "destinationComment": {
       "type": [
         "string",
         "null"
@@ -63,29 +54,21 @@
       ]
     },
     "lastStatus": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "jobStatusType": {
       "type": "object",
       "properties": {
         "id": {
           "type": "number"
         },
-        "createdAt": {
+        "code": {
           "type": "string"
         },
-        "jobStatusType": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "number"
-            },
-            "code": {
-              "type": "string"
-            },
-            "name": {
-              "type": "string"
-            }
-          }
-        },
-        "status": {
+        "name": {
           "type": "string"
         }
       }
@@ -96,46 +79,373 @@
         "null"
       ]
     },
-    "paymentMethod": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "number"
-        },
-        "name": {
-          "type": "string"
-        },
-        "code": {
-          "type": "string"
-        }
-      }
-    },
     "renewable": {
       "type": "number"
     },
     "jobType": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "code": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "pricingMethod": {
       "type": "object",
-      "properties": {
-        "id": {
-          "type": "number"
-        },
-        "code": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "pricingMethod": {
-          "type": "object",
-          "properties": {}
-        }
-      }
+      "properties": {}
     },
     "currentDelivery": {
       "type": [
         "string",
         "null"
       ]
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "originSignature": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "destinationSignature": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "estimatedDistanceToOrigin": {
+      "type": "number"
+    },
+    "estimatedDistanceToDestination": {
+      "type": "number"
+    },
+    "etaToDestination": {
+      "type": "string"
+    },
+    "etaToOrigin": {
+      "type": "string"
+    },
+    "traveledToOriginDistance": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "finalDriverAmount": {
+      "type": "number"
+    },
+    "finalCompanyAmount": {
+      "type": "number"
+    },
+    "currentDriverAmount": {
+      "type": "number"
+    },
+    "suggestedPolylineToOrigin": {
+      "type": "string"
+    },
+    "suggestedPolylineToDestination": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "isoCode": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "rate": {
+          "type": "number"
+        }
+      }
+    },
+    "lastDeliveryStatus": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "deliveryStatusType": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "code": {
+              "type": "string"
+            }
+          }
+        },
+        "driverDeviceLocationType": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            }
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "deliveryStatusPicked             null": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "deliveryStatusDelivered          null": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "driver": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "ratingAvg": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "deliveriesCount": {
+          "type": "number"
+        },
+        "signInCount": {
+          "type": "number"
+        },
+        "failedAttempts": {
+          "type": "number"
+        },
+        "currentDriverDevice": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "lastDriverDeviceLocation": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "number"
+                },
+                "longitude": {
+                  "type": "number"
+                }
+              }
+            },
+            "model": {
+              "type": "string"
+            },
+            "os": {
+              "type": "string"
+            },
+            "topics": {
+              "type": "object",
+              "properties": {
+                "all": {
+                  "type": "string"
+                },
+                "jobInvitation": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "lastDriverStatus": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "driverDevice": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "lastDriverDeviceLocation": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "model": {
+                  "type": "string"
+                },
+                "os": {
+                  "type": "string"
+                },
+                "topics": {
+                  "type": "object",
+                  "properties": {
+                    "all": {
+                      "type": "string"
+                    },
+                    "jobInvitation": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "driverWorkMode": {
+              "type": "object",
+              "properties": {
+                "vehicle": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "transportType": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "defaultMaxPackageWidthCm": {
+                  "type": "number"
+                },
+                "defaultMaxPackageHeightCm": {
+                  "type": "number"
+                },
+                "defaultMaxPackageLengthCm": {
+                  "type": "number"
+                },
+                "defaultGeolocateMeters": {
+                  "type": "number"
+                },
+                "defaultMaxPackageWeightKg": {
+                  "type": "number"
+                },
+                "speedRatio": {
+                  "type": "number"
+                },
+                "speed": {
+                  "type": "number"
+                },
+                "driverStatusType": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "number"
+                }
+              }
+            },
+            "currentDriverWorkMode": {
+              "type": "object",
+              "properties": {
+                "vehicle": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "transportType": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "number"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "defaultMaxPackageWidthCm": {
+                  "type": "number"
+                },
+                "defaultMaxPackageHeightCm": {
+                  "type": "number"
+                },
+                "defaultMaxPackageLengthCm": {
+                  "type": "number"
+                },
+                "defaultGeolocateMeters": {
+                  "type": "number"
+                },
+                "defaultMaxPackageWeightKg": {
+                  "type": "number"
+                },
+                "speedRatio": {
+                  "type": "number"
+                },
+                "speed": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "jobCancellation": {
       "type": [
@@ -616,35 +926,50 @@
     },
     "finalJobPrice": {
       "type": [
-        "object",
-        "null"
-      ],
+        "string",
+        "object"
+      ]
+    },
+    "id": {
+      "type": "number"
+    },
+    "originalTotalAmount": {
+      "type": "number"
+    },
+    "finalTotalAmount": {
+      "type": "number"
+    },
+    "cancellationPrice": {
+      "type": "number"
+    },
+    "minPrice": {
+      "type": "number"
+    },
+    "basePrice": {
+      "type": "number"
+    },
+    "jobQuote": {
+      "type": "object",
       "properties": {
         "id": {
           "type": "number"
         },
-        "originalTotalAmount": {
+        "createdAt": {
+          "type": "string"
+        },
+        "distance": {
           "type": "number"
         },
-        "finalTotalAmount": {
+        "duration": {
           "type": "number"
         },
-        "cancellationPrice": {
+        "durationWithTraffic": {
           "type": "number"
         },
-        "minPrice": {
-          "type": [
-            "string",
-            "null"
-          ]
+        "polyline": {
+          "type": "string"
         },
-        "basePrice": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "jobQuote": {
+        "originPlace": {
           "type": "object",
           "properties": {
             "id": {
@@ -653,19 +978,40 @@
             "createdAt": {
               "type": "string"
             },
-            "distance": {
-              "type": "number"
-            },
-            "duration": {
-              "type": "number"
-            },
-            "durationWithTraffic": {
-              "type": "number"
-            },
-            "polyline": {
+            "updatedAt": {
               "type": "string"
             },
-            "originPlace": {
+            "name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "contactName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "contactPhone": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "contactEmail": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "comment": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "address": {
               "type": "object",
               "properties": {
                 "id": {
@@ -677,128 +1023,19 @@
                 "updatedAt": {
                   "type": "string"
                 },
-                "name": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                "street": {
+                  "type": "string"
                 },
-                "contactName": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                "postcode": {
+                  "type": "string"
                 },
-                "contactPhone": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                "latitude": {
+                  "type": "number"
                 },
-                "contactEmail": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                "longitude": {
+                  "type": "number"
                 },
-                "comment": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "address": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "createdAt": {
-                      "type": "string"
-                    },
-                    "updatedAt": {
-                      "type": "string"
-                    },
-                    "street": {
-                      "type": "string"
-                    },
-                    "postcode": {
-                      "type": "string"
-                    },
-                    "latitude": {
-                      "type": "number"
-                    },
-                    "longitude": {
-                      "type": "number"
-                    },
-                    "city": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "number"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "code": {
-                          "type": "string"
-                        },
-                        "timezone": {
-                          "type": "string"
-                        },
-                        "latitude": {
-                          "type": "number"
-                        },
-                        "longitude": {
-                          "type": "number"
-                        },
-                        "region": {
-                          "type": "object",
-                          "properties": {
-                            "name": {
-                              "type": "string"
-                            },
-                            "country": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "number"
-                                },
-                                "name": {
-                                  "type": "string"
-                                },
-                                "iso2Code": {
-                                  "type": "string"
-                                },
-                                "defaultCurrency": {
-                                  "type": "object",
-                                  "properties": {
-                                    "name": {
-                                      "type": "string"
-                                    },
-                                    "isoCode": {
-                                      "type": "string"
-                                    },
-                                    "symbol": {
-                                      "type": "string"
-                                    },
-                                    "rate": {
-                                      "type": "number"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "accuracy": {
-                      "type": "number"
-                    }
-                  }
-                },
-                "placeType": {
+                "city": {
                   "type": "object",
                   "properties": {
                     "id": {
@@ -809,12 +1046,121 @@
                     },
                     "code": {
                       "type": "string"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "type": "number"
+                    },
+                    "region": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "country": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "iso2Code": {
+                              "type": "string"
+                            },
+                            "defaultCurrency": {
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "isoCode": {
+                                  "type": "string"
+                                },
+                                "symbol": {
+                                  "type": "string"
+                                },
+                                "rate": {
+                                  "type": "number"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   }
+                },
+                "accuracy": {
+                  "type": "number"
                 }
               }
             },
-            "destinationPlace": {
+            "placeType": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "destinationPlace": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "contactName": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "contactPhone": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "contactEmail": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "comment": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "address": {
               "type": "object",
               "properties": {
                 "id": {
@@ -826,128 +1172,19 @@
                 "updatedAt": {
                   "type": "string"
                 },
-                "name": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                "street": {
+                  "type": "string"
                 },
-                "contactName": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                "postcode": {
+                  "type": "string"
                 },
-                "contactPhone": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                "latitude": {
+                  "type": "number"
                 },
-                "contactEmail": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                "longitude": {
+                  "type": "number"
                 },
-                "comment": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "address": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "createdAt": {
-                      "type": "string"
-                    },
-                    "updatedAt": {
-                      "type": "string"
-                    },
-                    "street": {
-                      "type": "string"
-                    },
-                    "postcode": {
-                      "type": "string"
-                    },
-                    "latitude": {
-                      "type": "number"
-                    },
-                    "longitude": {
-                      "type": "number"
-                    },
-                    "city": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "number"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "code": {
-                          "type": "string"
-                        },
-                        "timezone": {
-                          "type": "string"
-                        },
-                        "latitude": {
-                          "type": "number"
-                        },
-                        "longitude": {
-                          "type": "number"
-                        },
-                        "region": {
-                          "type": "object",
-                          "properties": {
-                            "name": {
-                              "type": "string"
-                            },
-                            "country": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "number"
-                                },
-                                "name": {
-                                  "type": "string"
-                                },
-                                "iso2Code": {
-                                  "type": "string"
-                                },
-                                "defaultCurrency": {
-                                  "type": "object",
-                                  "properties": {
-                                    "name": {
-                                      "type": "string"
-                                    },
-                                    "isoCode": {
-                                      "type": "string"
-                                    },
-                                    "symbol": {
-                                      "type": "string"
-                                    },
-                                    "rate": {
-                                      "type": "number"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "accuracy": {
-                      "type": "number"
-                    }
-                  }
-                },
-                "placeType": {
+                "city": {
                   "type": "object",
                   "properties": {
                     "id": {
@@ -958,45 +1195,75 @@
                     },
                     "code": {
                       "type": "string"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "type": "number"
+                    },
+                    "region": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "country": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "iso2Code": {
+                              "type": "string"
+                            },
+                            "defaultCurrency": {
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "isoCode": {
+                                  "type": "string"
+                                },
+                                "symbol": {
+                                  "type": "string"
+                                },
+                                "rate": {
+                                  "type": "number"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   }
-                }
-              }
-            },
-            "currency": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
                 },
-                "isoCode": {
-                  "type": "string"
-                },
-                "symbol": {
-                  "type": "string"
-                },
-                "rate": {
+                "accuracy": {
                   "type": "number"
                 }
               }
             },
-            "originalTotalAmount": {
-              "type": "number"
-            },
-            "finalTotalAmount": {
-              "type": "number"
-            },
-            "cancellationPrice": {
-              "type": "number"
-            },
-            "minPrice": {
-              "type": "number"
-            },
-            "basePrice": {
-              "type": "number"
-            },
-            "expireAt": {
-              "type": "string"
+            "placeType": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
             }
           }
         },
@@ -1016,14 +1283,29 @@
               "type": "number"
             }
           }
+        },
+        "originalTotalAmount": {
+          "type": "number"
+        },
+        "finalTotalAmount": {
+          "type": "number"
+        },
+        "cancellationPrice": {
+          "type": "number"
+        },
+        "minPrice": {
+          "type": "number"
+        },
+        "basePrice": {
+          "type": "number"
+        },
+        "expireAt": {
+          "type": "string"
         }
       }
     },
     "transportType": {
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "id": {
           "type": "number"
@@ -1060,8 +1342,7 @@
     "packageType": {
       "type": [
         "string",
-        "null",
-        "object"
+        "null"
       ]
     },
     "picturePath": {
@@ -1070,13 +1351,6 @@
         "null"
       ]
     },
-    "clientRating": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "platformTransactions": {},
     "status": {
       "type": "string"
     }
