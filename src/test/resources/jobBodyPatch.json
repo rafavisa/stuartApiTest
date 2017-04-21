@@ -1,0 +1,15 @@
+{
+  "job":{
+    "deliveries": [
+      {
+        "id": "0",
+        "package_description": "patch",
+        "client_reference": "client_reference",
+        "pickup": {
+          "comment": "patch"
+        }
+
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-package com.stuart.api.tests.provisioning;
+package com.stuart.api.tests.v1.provisioning;
 
 import com.stuart.api.Env;
 

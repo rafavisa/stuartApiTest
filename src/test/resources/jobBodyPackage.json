@@ -1,0 +1,32 @@
+{
+  "job": {
+    "assignment_code": "R#123456 Patata",
+    "pickups": [
+      {
+        "address": "186, Pau Claris, Barcelona",
+        "comment": "Ask Bobby",
+        "contact": {
+          "firstname": "Bobby",
+          "lastname": "Brown",
+          "phone": "+34610101010",
+          "email": "bobby.brown@pizzacool.com",
+          "company": "Pizza Cool"
+        }
+      }
+    ],
+    "dropoffs": [
+      {
+        "package_type": "small",
+        "address": "174, Pau Claris, Barcelona",
+        "package_description": "red package with flowers",
+        "contact": {
+          "firstname": "VictorTest",
+          "lastname": "TestCual",
+          "phone": "+34650519529",
+          "email": "client2@email.com",
+          "company": "Testcual Company"
+        }
+      }
+    ]
+  }
+}

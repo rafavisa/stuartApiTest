@@ -1,7 +1,8 @@
-package com.stuart.api.tests;
+package com.stuart.api.tests.v1;
 
 import com.stuart.api.ApiConst;
-import com.stuart.api.tests.provisioning.PlaceProvider;
+import com.stuart.api.tests.ApiTest;
+import com.stuart.api.tests.v1.provisioning.PlaceProvider;
 
 import org.junit.Test;
 

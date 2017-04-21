@@ -1,7 +1,8 @@
-package com.stuart.api.tests;
+package com.stuart.api.tests.v1;
 
 import com.stuart.api.ApiConst;
 
+import com.stuart.api.tests.ApiTest;
 import org.junit.Test;
 
 import io.restassured.filter.log.LogDetail;

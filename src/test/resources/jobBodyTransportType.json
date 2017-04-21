@@ -1,0 +1,32 @@
+{
+  "job": {
+    "transport_type": "motorbike",
+    "pickups": [
+      {
+        "address": "186, Pau Claris, Barcelona",
+        "comment": "Ask Bobby",
+        "contact": {
+          "firstname": "Bobby",
+          "lastname": "Brown",
+          "phone": "+34610101010",
+          "email": "bobby.brown@pizzacool.com",
+          "company": "Pizza Cool"
+        }
+
+      }
+    ],
+    "dropoffs": [
+      {
+        "address": "188, Pau Claris, Barcelona",
+        "package_description": "red package with flowers",
+        "contact": {
+          "firstname": "John",
+          "lastname": "Doe",
+          "phone": "+34611111111",
+          "email": "client2@email.com",
+          "company": "JohnDoe Company"
+        }
+      }
+    ]
+  }
+}
