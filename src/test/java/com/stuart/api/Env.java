@@ -22,13 +22,13 @@ public class Env {
             "5667150462818adad05dbbc0b41fe512fd1e4b692d1111dffe";
 
     private static final String API_URI_QA = "http://qa-api.stuart.com";
-    private static final String USERNAME_QA = "r.visa@stuart.com";
-    private static final String PASSWORD_QA = "test1234";
-    private static final int CLIENT_ID_QA = 39888;
+    private static final String USERNAME_QA = "api.test@yopmail.com";
+    private static final String PASSWORD_QA = "qwertyui";
+    private static final int CLIENT_ID_QA = 85325;
     private static final String CLIENT_API_ID_QA =
-            "18e8707235651b7648bb48c647976bb922c05411c57f828e4d64164e44e12331";
+            "ec0d938d1aad83c04eec0c2198dcb23d0d6b80ad4d1a7b3cff04a524cbf13ff4";
     private static final String CLIENT_API_SECRET_QA =
-            "1c672b969a43f46ab0a2b8b0cfb1128750d863296cfba91fe255c3932b7a4052";
+            "34f4a9b9a7f0dd03f9e213c303c64d163479229a9dd2e59afa0edbf77c428827";
 
     private static final String API_URI_BETA = "http://beta-api.stuart.com";
     private static final String USERNAME_BETA = "r.visa@stuart.com";

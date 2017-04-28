@@ -30,7 +30,7 @@ public class JobByPackageTest extends ApiV2Test {
 
     @Test
     public void shouldCreateScheduledDoJobByPackageSize() throws Exception {
-        editJsonFile("jobBodyPackageScheduledDoPackage.json", "job", "dropoff_at", getTomorrowAtNoonDate());
+        editJsonFile("jobBodyPackageScheduledDoPackage.json", "/job", "dropoff_at", getTomorrowAtNoonDate());
         requestJobV2("jobBodyPackageScheduledDoPackage.json").
                 assertThat().body(matchesJsonSchemaInClasspath("jobs.json")).
                 log().ifValidationFails(LogDetail.ALL);
